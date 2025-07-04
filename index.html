@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentalPS - Sewa PlayStation Terpercaya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },                    colors: {
+                        'ps-light': '#FFFFFF',
+                        'ps-light-gray': '#F8F9FA',
+                        'ps-gray': '#E5E7EB',
+                        'ps-blue': '#0070D1',
+                        'ps-dark-blue': '#003087',
+                        'ps-accent': '#00A8FF',
+                        'ps-light-blue': '#87CEEB',
+                        'ps-navy': '#003087',
+                        'ps-dark': '#1F2937',
+                        'ps-text': '#1F2937',
+                        'ps-text-light': '#6B7280',
+                    },
+                    backgroundImage: {
+                        'ps-gradient': 'linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%)',
+                        'hero-gradient': 'linear-gradient(rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.9))',
+                    }
+                }
+            }
+        }    </script>
+</head>
+<body class="font-inter bg-ps-light text-ps-text">
+    <!-- Header Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-ps-gray shadow-sm">
+        <nav class="container mx-auto px-4 py-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.svg" class="w-11 h-11">
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-ps-text hover:text-ps-blue transition-colors">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li><a href="#home" class="text-ps-text-light hover:text-ps-blue transition-colors">Beranda</a></li>
+                    <li><a href="#availability" class="text-ps-text-light hover:text-ps-blue transition-colors">Ketersediaan Konsol</a></li>
+                    <li><a href="#packages" class="text-ps-text-light hover:text-ps-blue transition-colors">Paket Rental</a></li>
+                    <li><a href="#about" class="text-ps-text-light hover:text-ps-blue transition-colors">Tentang</a></li>
+                    <li><a href="#contact" class="text-ps-text-light hover:text-ps-blue transition-colors">Kontak</a></li>
+                    <li><a href="#" class="bg-ps-blue text-white px-6 py-2 rounded-full hover:bg-ps-dark-blue transition-colors">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            
+            <!-- Mobile Menu (hidden by default) -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4">
+                <ul class="space-y-4">
+                    <li><a href="#home" class="block text-ps-text-light hover:text-ps-blue transition-colors py-2">Beranda</a></li>
+                    <li><a href="#availability" class="block text-ps-text-light hover:text-ps-blue transition-colors py-2">Ketersediaan Konsol</a></li>
+                    <li><a href="#packages" class="block text-ps-text-light hover:text-ps-blue transition-colors py-2">Paket Rental</a></li>
+                    <li><a href="#about" class="block text-ps-text-light hover:text-ps-blue transition-colors py-2">Tentang</a></li>
+                    <li><a href="#contact" class="block text-ps-text-light hover:text-ps-blue transition-colors py-2">Kontak</a></li>
+                    <li><a href="#" class="block bg-ps-blue text-white px-6 py-3 rounded-full hover:bg-ps-dark-blue transition-colors text-center">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/hero-section.jpg" alt="PlayStation Console" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-hero-gradient"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-ps-text mb-6 leading-tight">
+                    Sewa <span class="text-ps-blue">PlayStation</span><br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-ps-blue to-ps-accent">Terpercaya</span>
+                </h1>
+                <p class="text-lg md:text-xl text-ps-text-light mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Nikmati pengalaman gaming terbaik dengan menyewa PlayStation 5 & PlayStation 4 
+                    dari RentalPS. Konsol berkualitas, harga terjangkau, dan pelayanan terpercaya.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#availability" class="bg-ps-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-ps-dark-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        <i class="fas fa-search mr-2"></i>Cek Ketersediaan
+                    </a>
+                    <a href="#packages" class="border-2 border-ps-blue text-ps-blue px-8 py-4 rounded-full text-lg font-semibold hover:bg-ps-blue hover:text-white transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-tags mr-2"></i>Lihat Paket
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Hero Stats -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 mt-16 lg:mt-20">
+                <div class="text-center p-4 lg:p-6 bg-white/80 backdrop-blur-md rounded-xl border border-ps-blue/30 hover:bg-white/90 transition-all duration-300 shadow-lg">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-ps-blue mb-2 drop-shadow-lg">15</h3>
+                    <p class="text-ps-text-light font-medium">PS5 Tersedia</p>
+                </div>
+                <div class="text-center p-4 lg:p-6 bg-white/80 backdrop-blur-md rounded-xl border border-ps-blue/30 hover:bg-white/90 transition-all duration-300 shadow-lg">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-ps-accent mb-2 drop-shadow-lg">24/7</h3>
+                    <p class="text-ps-text-light font-medium">Customer Support</p>
+                </div>
+                <div class="text-center p-4 lg:p-6 bg-white/80 backdrop-blur-md rounded-xl border border-ps-blue/30 hover:bg-white/90 transition-all duration-300 shadow-lg">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-ps-blue mb-2 drop-shadow-lg">8</h3>
+                    <p class="text-ps-text-light font-medium">PS4 Tersedia</p>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Console Availability Section -->
+    <section id="availability" class="py-20 bg-gradient-to-b from-ps-light to-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-ps-text-dark mb-4">Ketersediaan Konsol PlayStation</h2>
+                <p class="text-xl text-ps-text-light">Cek ketersediaan konsol PlayStation terbaru dengan tracking real-time</p>
+            </div>            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 game-grid">
+                <!-- PS5 Standard Console -->
+                <div class="console-card console-card-ps5 bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                    <div class="relative">
+                        <div class="h-64 bg-gradient-to-br from-ps-blue to-ps-dark-blue relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-white text-center">
+                                    <div class="text-6xl font-bold mb-2">PS5</div>
+                                    <div class="text-lg">Standard Edition</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="status-available bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Tersedia
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-ps-text-dark mb-2">PlayStation 5 Standard</h3>
+                        <p class="text-ps-text-light mb-4">Konsol gaming terbaru dengan performa ultra-high speed SSD dan ray tracing</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Total Unit:</span>
+                                <span class="font-semibold text-ps-text-dark">15 Unit</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Tersedia:</span>
+                                <span class="font-semibold text-green-600">12 Unit</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Disewa:</span>
+                                <span class="font-semibold text-orange-600">3 Unit</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="progress-bar bg-green-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-ps-blue mb-2">Rp 150,000<span class="text-lg text-ps-text-light">/hari</span></div>
+                            <button class="ps-button w-full text-white py-3 px-6 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                                Booking Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PS5 Digital Edition -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                    <div class="relative">
+                        <div class="h-64 bg-gradient-to-br from-ps-blue to-ps-dark-blue relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-white text-center">
+                                    <div class="text-6xl font-bold mb-2">PS5</div>
+                                    <div class="text-lg">Digital Edition</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Terbatas
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-ps-text-dark mb-2">PlayStation 5 Digital</h3>
+                        <p class="text-ps-text-light mb-4">Edisi digital tanpa disc drive dengan performa gaming yang sama</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Total Unit:</span>
+                                <span class="font-semibold text-ps-text-dark">8 Unit</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Tersedia:</span>
+                                <span class="font-semibold text-yellow-600">2 Unit</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Disewa:</span>
+                                <span class="font-semibold text-orange-600">6 Unit</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-yellow-500 h-2 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-ps-blue mb-2">Rp 130,000<span class="text-lg text-ps-text-light">/hari</span></div>
+                            <button class="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-3 px-6 rounded-full font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105">
+                                Booking Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PS4 Pro -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                    <div class="relative">
+                        <div class="h-64 bg-gradient-to-br from-gray-700 to-gray-900 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-white text-center">
+                                    <div class="text-6xl font-bold mb-2">PS4</div>
+                                    <div class="text-lg">Pro</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Tersedia
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-ps-text-dark mb-2">PlayStation 4 Pro</h3>
+                        <p class="text-ps-text-light mb-4">Gaming 4K dengan library game terlengkap dan performa tinggi</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Total Unit:</span>
+                                <span class="font-semibold text-ps-text-dark">12 Unit</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Tersedia:</span>
+                                <span class="font-semibold text-green-600">8 Unit</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Disewa:</span>
+                                <span class="font-semibold text-orange-600">4 Unit</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 67%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-ps-blue mb-2">Rp 100,000<span class="text-lg text-ps-text-light">/hari</span></div>
+                            <button class="w-full bg-gradient-to-r from-ps-blue to-ps-dark-blue text-white py-3 px-6 rounded-full font-semibold hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 transform hover:scale-105">
+                                Booking Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PS4 Slim -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                    <div class="relative">
+                        <div class="h-64 bg-gradient-to-br from-gray-600 to-gray-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-white text-center">
+                                    <div class="text-6xl font-bold mb-2">PS4</div>
+                                    <div class="text-lg">Slim</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Tersedia
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-ps-text-dark mb-2">PlayStation 4 Slim</h3>
+                        <p class="text-ps-text-light mb-4">Konsol PlayStation 4 compact dengan ribuan game tersedia</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Total Unit:</span>
+                                <span class="font-semibold text-ps-text-dark">20 Unit</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Tersedia:</span>
+                                <span class="font-semibold text-green-600">15 Unit</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Disewa:</span>
+                                <span class="font-semibold text-orange-600">5 Unit</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-ps-blue mb-2">Rp 80,000<span class="text-lg text-ps-text-light">/hari</span></div>
+                            <button class="w-full bg-gradient-to-r from-ps-blue to-ps-dark-blue text-white py-3 px-6 rounded-full font-semibold hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 transform hover:scale-105">
+                                Booking Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controller Add-on -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                    <div class="relative">
+                        <div class="h-64 bg-gradient-to-br from-purple-500 to-purple-700 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-white text-center">
+                                    <div class="text-4xl font-bold mb-2">🎮</div>
+                                    <div class="text-lg">Extra Controller</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Tersedia
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-ps-text-dark mb-2">Controller Tambahan</h3>
+                        <p class="text-ps-text-light mb-4">DualSense dan DualShock 4 untuk pengalaman multiplayer</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">DualSense (PS5):</span>
+                                <span class="font-semibold text-green-600">25 Unit</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">DualShock 4:</span>
+                                <span class="font-semibold text-green-600">40 Unit</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">Total Tersedia:</span>
+                                <span class="font-semibold text-green-600">65 Unit</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-ps-blue mb-2">Rp 25,000<span class="text-lg text-ps-text-light">/hari</span></div>
+                            <button class="w-full bg-gradient-to-r from-purple-500 to-purple-700 text-white py-3 px-6 rounded-full font-semibold hover:from-purple-600 hover:to-purple-800 transition-all duration-300 transform hover:scale-105">
+                                Tambah ke Booking
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accessories Package -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                    <div class="relative">
+                        <div class="h-64 bg-gradient-to-br from-orange-500 to-red-600 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-white text-center">
+                                    <div class="text-4xl font-bold mb-2">📦</div>
+                                    <div class="text-lg">Paket Lengkap</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Paket
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-ps-text-dark mb-2">Paket Gaming Lengkap</h3>
+                        <p class="text-ps-text-light mb-4">Konsol + 2 Controller + Headset + Game Starter Pack</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">✓ Konsol Pilihan</span>
+                                <span class="font-semibold text-ps-text-dark">1 Unit</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">✓ 2 Controller</span>
+                                <span class="font-semibold text-ps-text-dark">Included</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">✓ Gaming Headset</span>
+                                <span class="font-semibold text-ps-text-dark">Included</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ps-text-light">✓ 5 Game Pilihan</span>
+                                <span class="font-semibold text-ps-text-dark">Included</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-ps-blue mb-2">Mulai dari<br>Rp 200,000<span class="text-lg text-ps-text-light">/hari</span></div>
+                            <button class="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white py-3 px-6 rounded-full font-semibold hover:from-orange-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105">
+                                Pilih Paket
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Rental Packages Section -->
+    <section id="packages" class="py-20 bg-ps-dark-blue">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">Paket Rental Konsol</h2>
+                <p class="text-xl text-gray-300">Pilih paket rental konsol PlayStation sesuai kebutuhan Anda</p>
+            </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Package -->
+                <div class="bg-white rounded-2xl p-8 border border-ps-gray hover:border-ps-blue transition-colors duration-300 shadow-lg">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-ps-text mb-4">Paket Harian</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-ps-blue">Rp 150.000</span>
+                            <span class="text-ps-text-light">/hari</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-ps-text-light">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            PlayStation 5 atau PS4
+                        </li>
+                        <li class="flex items-center text-ps-text-light">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            2 Controller DualSense/DualShock
+                        </li>
+                        <li class="flex items-center text-ps-text-light">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Kabel HDMI & Power
+                        </li>
+                        <li class="flex items-center text-ps-text-light">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Antar Jemput (Jakarta)
+                        </li>                        <li class="flex items-center text-ps-text-light">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Setup Gratis
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 bg-gradient-to-r from-ps-blue to-ps-accent text-white font-bold rounded-full hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 shadow-xl">
+                        Pilih Paket
+                    </button>
+                </div>                <!-- Popular Package -->
+                <div class="bg-ps-dark rounded-2xl p-8 border-2 border-ps-blue relative transform scale-105">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-ps-accent text-white px-4 py-2 rounded-full text-sm font-bold">
+                            Terpopuler
+                        </span>
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Paket Mingguan</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-ps-blue">Rp 900.000</span>
+                            <span class="text-gray-400">/minggu</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            PlayStation 5 Latest Edition
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            4 Controller Premium
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Gaming Headset
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Antar Jemput + Maintenance
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            24/7 Support
+                        </li>                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Game Library Access
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 bg-gradient-to-r from-ps-accent to-ps-blue text-white font-bold rounded-full hover:from-ps-blue hover:to-ps-accent transition-all duration-300 shadow-xl">
+                        Pilih Paket
+                    </button>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="bg-ps-dark rounded-2xl p-8 border border-ps-blue/30 hover:border-ps-blue transition-colors duration-300">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Paket Bulanan</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-ps-blue">Rp 3.500.000</span>
+                            <span class="text-gray-400">/bulan</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            PlayStation 5 Pro (Priority)
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            6 Controller + 2 Spare
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Premium Gaming Setup
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            VIP Support & Maintenance
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Exclusive Game Access
+                        </li>                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            PlayStation Plus Premium
+                        </li>
+                    </ul>                    <button class="w-full py-4 bg-gradient-to-r from-ps-blue to-ps-accent text-white font-bold rounded-full hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 shadow-xl">
+                        Pilih Paket
+                    </button>
+                </div>
+            </div>
+        </div>    </section><!-- Why Choose Us Section -->
+    <section class="py-20 bg-ps-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-ps-text mb-4">Mengapa Memilih RentalPS?</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-white rounded-xl hover:transform hover:scale-105 transition-all duration-300 border border-ps-gray shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-ps-blue to-ps-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shipping-fast text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Pengiriman Cepat</h3>
+                    <p class="text-ps-text-light">Pengiriman dan setup dalam 2 jam di area Jabodetabek</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-xl hover:transform hover:scale-105 transition-all duration-300 border border-ps-gray shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-ps-blue to-ps-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tools text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Perawatan Terjamin</h3>
+                    <p class="text-ps-text-light">Semua konsol dalam kondisi prima dan terawat</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-xl hover:transform hover:scale-105 transition-all duration-300 border border-ps-gray shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-ps-blue to-ps-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Support 24/7</h3>
+                    <p class="text-ps-text-light">Tim support siap membantu kapan saja</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-xl hover:transform hover:scale-105 transition-all duration-300 border border-ps-gray shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-ps-blue to-ps-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Jaminan Keamanan</h3>
+                    <p class="text-ps-text-light">Asuransi penuh untuk semua peralatan</p>
+                </div>
+            </div>
+        </div>
+    </section><!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-ps-text mb-4">Mengapa Pilih RentalPS?</h2>
+                <p class="text-lg md:text-xl text-ps-text-light max-w-2xl mx-auto">Kami memberikan pengalaman rental PlayStation terbaik dengan layanan yang tak tertandingi</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1: Real-time Tracking -->
+                <div class="feature-card group text-center p-6 bg-gradient-to-br from-ps-light to-white rounded-2xl border border-ps-gray/50 hover:border-ps-blue/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-ps-blue to-ps-dark-blue rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-clock text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Real-time Tracking</h3>
+                    <p class="text-ps-text-light leading-relaxed">Pantau ketersediaan konsol secara real-time dan dapatkan notifikasi instant ketika konsol favoritmu tersedia</p>
+                </div>
+
+                <!-- Feature 2: Fast Delivery -->
+                <div class="feature-card group text-center p-6 bg-gradient-to-br from-ps-light to-white rounded-2xl border border-ps-gray/50 hover:border-ps-blue/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shipping-fast text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Pengiriman Cepat</h3>
+                    <p class="text-ps-text-light leading-relaxed">Layanan same-day delivery untuk area Jakarta dan 1-2 hari untuk area lainnya di Jabodetabek</p>
+                </div>
+
+                <!-- Feature 3: Quality Guarantee -->
+                <div class="feature-card group text-center p-6 bg-gradient-to-br from-ps-light to-white rounded-2xl border border-ps-gray/50 hover:border-ps-blue/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-medal text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Kualitas Terjamin</h3>
+                    <p class="text-ps-text-light leading-relaxed">Semua konsol telah diperiksa secara menyeluruh dan dipastikan dalam kondisi prima sebelum disewakan</p>
+                </div>
+
+                <!-- Feature 4: 24/7 Support -->
+                <div class="feature-card group text-center p-6 bg-gradient-to-br from-ps-light to-white rounded-2xl border border-ps-gray/50 hover:border-ps-blue/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-headset text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Support 24/7</h3>
+                    <p class="text-ps-text-light leading-relaxed">Tim customer service kami siap membantu kapan saja melalui WhatsApp, call center, atau live chat</p>
+                </div>
+
+                <!-- Feature 5: Flexible Pricing -->
+                <div class="feature-card group text-center p-6 bg-gradient-to-br from-ps-light to-white rounded-2xl border border-ps-gray/50 hover:border-ps-blue/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-tags text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Harga Fleksibel</h3>
+                    <p class="text-ps-text-light leading-relaxed">Berbagai pilihan paket rental mulai dari harian, mingguan, hingga bulanan dengan harga yang kompetitif</p>
+                </div>
+
+                <!-- Feature 6: Insurance -->
+                <div class="feature-card group text-center p-6 bg-gradient-to-br from-ps-light to-white rounded-2xl border border-ps-gray/50 hover:border-ps-blue/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shield-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Asuransi Lengkap</h3>
+                    <p class="text-ps-text-light leading-relaxed">Perlindungan asuransi penuh untuk semua peralatan, memberikan ketenangan pikiran selama rental</p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <div class="inline-flex items-center space-x-4 bg-gradient-to-r from-ps-blue to-ps-accent text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-rocket text-xl"></i>
+                    <span>Mulai Rental Sekarang</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rental Packages Section -->
+    <section id="packages" class="py-20 bg-ps-dark-blue">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">Paket Rental Konsol</h2>
+                <p class="text-xl text-gray-300">Pilih paket rental konsol PlayStation sesuai kebutuhan Anda</p>
+            </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Package -->
+                <div class="bg-white rounded-2xl p-8 border border-ps-gray hover:border-ps-blue transition-colors duration-300 shadow-lg">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-ps-text mb-4">Paket Harian</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-ps-blue">Rp 150.000</span>
+                            <span class="text-ps-text-light">/hari</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-ps-text-light">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            PlayStation 5 atau PS4
+                        </li>
+                        <li class="flex items-center text-ps-text-light">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            2 Controller DualSense/DualShock
+                        </li>
+                        <li class="flex items-center text-ps-text-light">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Kabel HDMI & Power
+                        </li>
+                        <li class="flex items-center text-ps-text-light">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Antar Jemput (Jakarta)
+                        </li>                        <li class="flex items-center text-ps-text-light">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Setup Gratis
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 bg-gradient-to-r from-ps-blue to-ps-accent text-white font-bold rounded-full hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 shadow-xl">
+                        Pilih Paket
+                    </button>
+                </div>                <!-- Popular Package -->
+                <div class="bg-ps-dark rounded-2xl p-8 border-2 border-ps-blue relative transform scale-105">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-ps-accent text-white px-4 py-2 rounded-full text-sm font-bold">
+                            Terpopuler
+                        </span>
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Paket Mingguan</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-ps-blue">Rp 900.000</span>
+                            <span class="text-gray-400">/minggu</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            PlayStation 5 Latest Edition
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            4 Controller Premium
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Gaming Headset
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Antar Jemput + Maintenance
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            24/7 Support
+                        </li>                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Game Library Access
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 bg-gradient-to-r from-ps-accent to-ps-blue text-white font-bold rounded-full hover:from-ps-blue hover:to-ps-accent transition-all duration-300 shadow-xl">
+                        Pilih Paket
+                    </button>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="bg-ps-dark rounded-2xl p-8 border border-ps-blue/30 hover:border-ps-blue transition-colors duration-300">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Paket Bulanan</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-ps-blue">Rp 3.500.000</span>
+                            <span class="text-gray-400">/bulan</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            PlayStation 5 Pro (Priority)
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            6 Controller + 2 Spare
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Premium Gaming Setup
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            VIP Support & Maintenance
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            Exclusive Game Access
+                        </li>                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-ps-accent mr-3"></i>
+                            PlayStation Plus Premium
+                        </li>
+                    </ul>                    <button class="w-full py-4 bg-gradient-to-r from-ps-blue to-ps-accent text-white font-bold rounded-full hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 shadow-xl">
+                        Pilih Paket
+                    </button>
+                </div>
+            </div>
+        </div>    </section><!-- Why Choose Us Section -->
+    <section class="py-20 bg-ps-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-ps-text mb-4">Mengapa Memilih RentalPS?</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-white rounded-xl hover:transform hover:scale-105 transition-all duration-300 border border-ps-gray shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-ps-blue to-ps-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shipping-fast text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Pengiriman Cepat</h3>
+                    <p class="text-ps-text-light">Pengiriman dan setup dalam 2 jam di area Jabodetabek</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-xl hover:transform hover:scale-105 transition-all duration-300 border border-ps-gray shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-ps-blue to-ps-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tools text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Perawatan Terjamin</h3>
+                    <p class="text-ps-text-light">Semua konsol dalam kondisi prima dan terawat</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-xl hover:transform hover:scale-105 transition-all duration-300 border border-ps-gray shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-ps-blue to-ps-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Support 24/7</h3>
+                    <p class="text-ps-text-light">Tim support siap membantu kapan saja</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-xl hover:transform hover:scale-105 transition-all duration-300 border border-ps-gray shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-ps-blue to-ps-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ps-text mb-3">Jaminan Keamanan</h3>
+                    <p class="text-ps-text-light">Asuransi penuh untuk semua peralatan</p>
+                </div>
+            </div>
+        </div>
+    </section><!-- Modal for Login -->
+    <div id="loginModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl p-8 w-full max-w-md shadow-2xl">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-ps-text">Masuk ke Akun</h2>
+                    <button class="close text-ps-text-light hover:text-ps-text text-2xl">&times;</button>
+                </div>
+                <form class="space-y-4">
+                    <input type="email" placeholder="Email" required 
+                           class="w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none">                    <input type="password" placeholder="Password" required 
+                           class="w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none">
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-ps-blue to-ps-accent text-white font-bold rounded-full hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 shadow-xl">
+                        Masuk
+                    </button>
+                </form>
+                <p class="text-center text-ps-text-light mt-6">
+                    Belum punya akun? <a href="#" id="showRegister" class="text-ps-blue hover:underline">Daftar di sini</a>
+                </p>
+            </div>
+        </div>
+    </div>    <!-- Modal for Register -->
+    <div id="registerModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl p-8 w-full max-w-md shadow-2xl">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-ps-text">Daftar Akun Baru</h2>
+                    <button class="close text-ps-text-light hover:text-ps-text text-2xl">&times;</button>
+                </div>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Nama Lengkap" required 
+                           class="w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none">
+                    <input type="email" placeholder="Email" required 
+                           class="w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none">
+                    <input type="tel" placeholder="No. Telepon" required 
+                           class="w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none">
+                    <input type="password" placeholder="Password" required 
+                           class="w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none">                    <input type="password" placeholder="Konfirmasi Password" required 
+                           class="w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none">
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-ps-blue to-ps-accent text-white font-bold rounded-full hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 shadow-xl">
+                        Daftar
+                    </button>
+                </form>                <p class="text-center text-ps-text-light mt-6">
+                    Sudah punya akun? <a href="#" id="showLogin" class="text-ps-blue hover:underline">Masuk di sini</a>
+                </p>
+            </div>
+        </div>
+    </div>    <!-- Booking Modal -->
+    <div id="bookingModal" class="booking-modal hidden">
+        <div class="booking-modal-container">
+            <div class="booking-modal-content">                <div class="flex justify-between items-center mb-6 modal-header-sticky md:static md:mb-6 md:pb-0 md:border-b-0 md:m-0 md:p-0">
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-ps-text">Booking Konsol PlayStation</h2>
+                    <button class="close-booking text-ps-text-light hover:text-ps-text text-2xl hover:bg-ps-light-gray rounded-full w-10 h-10 md:w-8 md:h-8 flex items-center justify-center transition-colors">&times;</button>
+                </div>
+                
+                <div id="bookingContent" class="space-y-6">
+                    <!-- Console Info -->
+                    <div class="bg-ps-light-gray rounded-lg p-4 md:p-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-ps-blue to-ps-dark-blue rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold text-lg" id="consoleIcon">PS5</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg md:text-xl text-ps-text" id="consoleName">PlayStation 5 Standard</h3>
+                                <p class="text-ps-text-light" id="consolePrice">Rp 150,000/hari</p>
+                                <p class="text-sm text-green-600" id="consoleAvailability">12 unit tersedia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Form -->
+                    <form id="bookingForm" class="space-y-6">
+                        <div class="booking-form-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-ps-text mb-2">Tanggal Mulai</label>
+                                <input type="date" id="startDate" required 
+                                       class="booking-form-input w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text focus:border-ps-blue focus:outline-none focus:ring-2 focus:ring-ps-blue/20">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-ps-text mb-2">Tanggal Selesai</label>
+                                <input type="date" id="endDate" required 
+                                       class="booking-form-input w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text focus:border-ps-blue focus:outline-none focus:ring-2 focus:ring-ps-blue/20">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-ps-text mb-2">Durasi Rental</label>
+                            <select id="rentalDuration" class="booking-form-input w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text focus:border-ps-blue focus:outline-none focus:ring-2 focus:ring-ps-blue/20">
+                                <option value="1">1 Hari</option>
+                                <option value="3">3 Hari</option>
+                                <option value="7">1 Minggu</option>
+                                <option value="14">2 Minggu</option>
+                                <option value="30">1 Bulan</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-ps-text mb-2">Alamat Pengiriman</label>
+                            <textarea id="deliveryAddress" rows="3" placeholder="Masukkan alamat lengkap untuk pengiriman..." required
+                                      class="booking-form-textarea w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none focus:ring-2 focus:ring-ps-blue/20 resize-none"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-ps-text mb-2">No. WhatsApp</label>
+                            <input type="tel" id="whatsappNumber" placeholder="08xxxxxxxxxx" required 
+                                   class="booking-form-input w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none focus:ring-2 focus:ring-ps-blue/20">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-ps-text mb-2">Catatan Tambahan (Opsional)</label>
+                            <textarea id="additionalNotes" rows="2" placeholder="Permintaan khusus atau catatan..."
+                                      class="booking-form-textarea w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none focus:ring-2 focus:ring-ps-blue/20 resize-none"></textarea>
+                        </div>
+
+                        <!-- Price Summary -->
+                        <div class="bg-ps-blue/10 rounded-lg p-4 md:p-6 border border-ps-blue/20">
+                            <h4 class="font-semibold text-ps-text mb-4 text-lg">Ringkasan Harga</h4>
+                            <div class="space-y-2 text-sm md:text-base">
+                                <div class="flex justify-between">
+                                    <span class="text-ps-text-light">Harga per hari:</span>
+                                    <span class="text-ps-text font-medium" id="pricePerDay">Rp 150,000</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-ps-text-light">Durasi:</span>
+                                    <span class="text-ps-text font-medium" id="durationDisplay">1 hari</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-ps-text-light">Biaya antar/jemput:</span>
+                                    <span class="text-ps-text font-medium">Rp 50,000</span>
+                                </div>
+                                <hr class="border-ps-gray my-3">
+                                <div class="flex justify-between font-bold text-lg md:text-xl">
+                                    <span class="text-ps-text">Total:</span>
+                                    <span class="text-ps-blue" id="totalPrice">Rp 200,000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4 pt-4">
+                            <button type="button" class="flex-1 py-3 md:py-4 px-6 border border-ps-gray text-ps-text-light rounded-full hover:bg-ps-light-gray transition-colors close-booking">
+                                Batal
+                            </button>
+                            <button type="submit" class="flex-1 py-3 md:py-4 px-6 bg-gradient-to-r from-ps-blue to-ps-dark-blue text-white font-semibold rounded-full hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300">
+                                Konfirmasi Booking
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>    <script src="js/script.js"></script>
+    <script src="js/status-manager.js"></script>
+    <script src="js/console-tracker.js"></script>
+    <script src="js/booking-system.js"></script>
+    <script src="js/mobile-modal.js"></script>
+</body>
+</html>

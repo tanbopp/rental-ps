@@ -1,0 +1,668 @@
+/* Additional CSS for PlayStation Console Rental Website */
+
+/* Custom scrollbar - PlayStation Blue theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0070d1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #003087;
+}
+
+/* PlayStation-like glow effects */
+.ps-glow {
+    box-shadow: 0 0 20px rgba(0, 112, 209, 0.3);
+}
+
+.ps-glow:hover {
+    box-shadow: 0 0 30px rgba(0, 112, 209, 0.5);
+}
+
+/* Console availability animations */
+.availability-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Booking modal animations */
+.modal-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Console card hover effects */
+.console-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.console-card:hover {
+    transform: translateY(-8px) rotateX(5deg);
+    box-shadow: 0 20px 40px rgba(0, 112, 209, 0.2);
+}
+
+/* Status badge animations */
+.status-available {
+    animation: bounce 2s infinite;
+}
+
+.status-limited {
+    animation: warning-pulse 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    40%, 43% {
+        transform: translate3d(0, -10px, 0);
+    }
+    70% {
+        transform: translate3d(0, -5px, 0);
+    }
+    90% {
+        transform: translate3d(0, -2px, 0);
+    }
+}
+
+@keyframes warning-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Progress bar animations */
+.progress-bar {
+    transition: width 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* PlayStation button styles */
+.ps-button {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #0070d1, #003087);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ps-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ps-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.ps-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 112, 209, 0.3);
+}
+
+/* Notification styles */
+.notification {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hero section enhancements */
+.hero-stats {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 112, 209, 0.2);
+}
+
+/* Gaming aesthetic touches */
+.game-grid {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 112, 209, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 168, 255, 0.1) 0%, transparent 50%);
+}
+
+/* Console card special effects */
+.console-card-ps5 {
+    background: linear-gradient(135deg, rgba(0, 112, 209, 0.05) 0%, rgba(0, 48, 135, 0.05) 100%);
+    border: 1px solid rgba(0, 112, 209, 0.1);
+}
+
+.console-card-ps4 {
+    background: linear-gradient(135deg, rgba(107, 114, 128, 0.05) 0%, rgba(75, 85, 99, 0.05) 100%);
+    border: 1px solid rgba(107, 114, 128, 0.1);
+}
+
+/* Loading animation for images */
+.image-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+    .console-card:hover {
+        transform: translateY(-4px);
+    }
+    
+    .ps-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Background patterns */
+.pattern-dots {
+    background-image: radial-gradient(circle, rgba(102, 192, 244, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.pattern-grid {
+    background-image: 
+        linear-gradient(rgba(102, 192, 244, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(102, 192, 244, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Custom animations */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(102, 192, 244, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(102, 192, 244, 0.6);
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation classes */
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+}
+
+.animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+}
+
+.animate-scale-in {
+    animation: scale-in 0.5s ease-out;
+}
+
+/* Glass morphism effect */
+.glass {
+    background: rgba(27, 40, 56, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(102, 192, 244, 0.18);
+}
+
+/* Hover effects for interactive elements */
+.interactive-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom button styles */
+.btn-steam {
+    background: linear-gradient(135deg, #66c0f4 0%, #4a9eff 100%);
+    border: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-steam::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-steam:hover::before {
+    left: 100%;
+}
+
+.btn-steam:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 192, 244, 0.4);
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(102, 192, 244, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-hover:hover::before {
+    opacity: 1;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(102, 192, 244, 0.2);
+}
+
+/* Loading states */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 192, 244, 0.3), transparent);
+    animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Steam-like progress bars */
+.progress-bar {
+    background: #1b2838;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #66c0f4, #beee11);
+    height: 100%;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: progress-shine 2s infinite;
+}
+
+@keyframes progress-shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Responsive design helpers */
+@media (max-width: 768px) {
+    .mobile-full {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    .mobile-text-center {
+        text-align: center !important;
+    }
+    
+    .mobile-hidden {
+        display: none !important;
+    }
+}
+
+/* Focus states for accessibility */
+button:focus,
+input:focus,
+a:focus {
+    outline: 2px solid #66c0f4;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .steam-dark {
+        background: #000 !important;
+    }
+    
+    .steam-light-blue {
+        background: #333 !important;
+    }
+    
+    .text-gray-300 {
+        color: #fff !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Custom utilities */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.backdrop-blur-strong {
+    backdrop-filter: blur(20px);
+}
+
+.border-glow {
+    border: 1px solid rgba(102, 192, 244, 0.5);
+    box-shadow: 0 0 10px rgba(102, 192, 244, 0.2);
+}
+
+/* Booking Modal Enhanced Styles */
+.booking-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.booking-modal-container {
+    background: white;
+    border-radius: 1rem;
+    width: 80%;
+    max-width: 900px;
+    max-height: 90vh;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+.booking-modal-content {
+    padding: 2rem;
+    overflow-y: auto;
+    max-height: calc(90vh - 4rem);
+    scrollbar-width: thin;
+    scrollbar-color: #0070d1 #f8f9fa;
+}
+
+/* Custom scrollbar for modal content */
+.booking-modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.booking-modal-content::-webkit-scrollbar-track {
+    background: #f8f9fa;
+    border-radius: 3px;
+}
+
+.booking-modal-content::-webkit-scrollbar-thumb {
+    background: #0070d1;
+    border-radius: 3px;
+}
+
+.booking-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #003087;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Mobile responsive modal */
+@media (max-width: 768px) {
+    .booking-modal {
+        padding: 0;
+        align-items: stretch;
+    }
+    
+    .booking-modal-container {
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .booking-modal-content {
+        flex: 1;
+        padding: 1.5rem;
+        max-height: none;
+        overflow-y: auto;
+    }
+    
+    /* Ensure body doesn't scroll when modal is open on mobile */
+    body.modal-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+    .booking-modal-container {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh; /* Dynamic viewport height for mobile browsers */
+    }
+    
+    .booking-modal-content {
+        padding: 1rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .booking-form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Sticky header for mobile */
+    .modal-header-sticky {
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 20;
+        margin: -1rem -1rem 1rem -1rem;
+        padding: 1rem;
+        border-bottom: 1px solid #e5e7eb;
+    }
+}
+
+/* Enhanced touch target sizes for mobile */
+@media (max-width: 768px) {
+    .close-booking {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .booking-form-input,
+    .booking-form-textarea {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+    
+    /* Prevent zoom on inputs */
+    .booking-form-input,
+    .booking-form-textarea,
+    select {
+        font-size: 16px !important;
+    }
+}
+
+/* Smooth scrolling for modal content */
+.booking-modal-content {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Loading state for form submission */
+.form-loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.form-loading .booking-form-input,
+.form-loading .booking-form-textarea {
+    background-color: #f9fafb;
+}
