@@ -12,11 +12,13 @@
                 extend: {
                     fontFamily: {
                         'inter': ['Inter', 'sans-serif'],
-                    },                    colors: {
+                    },                    
+                    colors: {
                         'ps-light': '#FFFFFF',
                         'ps-light-gray': '#F8F9FA',
                         'ps-gray': '#E5E7EB',
-                        'ps-blue': '#0070D1',
+                        'ps-blue': '#0071e3',
+                        'ps-blue-hover': '#0077ED',
                         'ps-dark-blue': '#003087',
                         'ps-accent': '#00A8FF',
                         'ps-light-blue': '#87CEEB',
@@ -35,11 +37,11 @@
 </head>
 <body class="font-inter bg-ps-light text-ps-text">
     <!-- Header Navigation -->
-    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-ps-gray shadow-sm">
+    <header class="fixed w-full h-[60px] top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-ps-gray shadow-sm flex items-center">
         <nav class="container mx-auto px-4 py-2">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <img src="assets/logo.svg" class="w-11 h-11">
+                    <img src="assets/logo.svg" class="h-11">
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -48,29 +50,30 @@
                 </button>
                 
                 <!-- Desktop Menu -->
-                <ul class="hidden md:flex items-center space-x-8">
-                    <li><a href="#home" class="text-ps-text-light hover:text-ps-blue transition-colors">Beranda</a></li>
-                    <li><a href="#availability" class="text-ps-text-light hover:text-ps-blue transition-colors">Ketersediaan Konsol</a></li>
-                    <li><a href="#packages" class="text-ps-text-light hover:text-ps-blue transition-colors">Paket Rental</a></li>
-                    <li><a href="#about" class="text-ps-text-light hover:text-ps-blue transition-colors">Tentang</a></li>
-                    <li><a href="#contact" class="text-ps-text-light hover:text-ps-blue transition-colors">Kontak</a></li>
-                    <li><a href="#" class="bg-ps-blue text-white px-6 py-2 rounded-full hover:bg-ps-dark-blue transition-colors">Hubungi Kami</a></li>
+                <ul class="hidden md:flex items-center space-x-1 text-sm font-semibold text-slate-900">
+                    <li><a href="#home" class="transition-colors px-3 py-1 hover:bg-neutral-100 rounded-full">Beranda</a></li>
+                    <li><a href="#availability" class="transition-colors px-3 py-1 hover:bg-neutral-100 rounded-full">Ketersediaan Konsol</a></li>
+                    <li><a href="#packages" class="transition-colors px-3 py-1 hover:bg-neutral-100 rounded-full">Paket Rental</a></li>
+                    <li><a href="#about" class="transition-colors px-3 py-1 hover:bg-neutral-100 rounded-full">Tentang</a></li>
+                    <li><a href="#contact" class="transition-colors px-3 py-1 hover:bg-neutral-100 rounded-full">Kontak</a></li>
+                    <li><a href="#" class="bg-ps-blue text-white px-3 py-2 rounded-full hover:bg-ps-blue-hover transition-colors">Booking Sekarang</a></li>
                 </ul>
             </div>
             
             <!-- Mobile Menu (hidden by default) -->
-            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4">
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4 text-slate-900">
                 <ul class="space-y-4">
-                    <li><a href="#home" class="block text-ps-text-light hover:text-ps-blue transition-colors py-2">Beranda</a></li>
-                    <li><a href="#availability" class="block text-ps-text-light hover:text-ps-blue transition-colors py-2">Ketersediaan Konsol</a></li>
-                    <li><a href="#packages" class="block text-ps-text-light hover:text-ps-blue transition-colors py-2">Paket Rental</a></li>
-                    <li><a href="#about" class="block text-ps-text-light hover:text-ps-blue transition-colors py-2">Tentang</a></li>
-                    <li><a href="#contact" class="block text-ps-text-light hover:text-ps-blue transition-colors py-2">Kontak</a></li>
+                    <li><a href="#home" class="block hover:text-ps-blue transition-colors py-2">Beranda</a></li>
+                    <li><a href="#availability" class="block hover:text-ps-blue transition-colors py-2">Ketersediaan Konsol</a></li>
+                    <li><a href="#packages" class="block hover:text-ps-blue transition-colors py-2">Paket Rental</a></li>
+                    <li><a href="#about" class="block hover:text-ps-blue transition-colors py-2">Tentang</a></li>
+                    <li><a href="#contact" class="block hover:text-ps-blue transition-colors py-2">Kontak</a></li>
                     <li><a href="#" class="block bg-ps-blue text-white px-6 py-3 rounded-full hover:bg-ps-dark-blue transition-colors text-center">Hubungi Kami</a></li>
                 </ul>
             </div>
         </nav>
-    </header>    <!-- Hero Section -->
+    </header>    
+    <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
@@ -82,25 +85,25 @@
         <div class="relative z-10 container mx-auto px-4 text-center">
             <div class="max-w-4xl mx-auto">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-ps-text mb-6 leading-tight">
-                    Sewa <span class="text-ps-blue">PlayStation</span><br>
+                    Sewa <span class="text-ps-blue">PlayStation4</span><br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-ps-blue to-ps-accent">Terpercaya</span>
                 </h1>
-                <p class="text-lg md:text-xl text-ps-text-light mb-8 max-w-2xl mx-auto leading-relaxed">
-                    Nikmati pengalaman gaming terbaik dengan menyewa PlayStation 5 & PlayStation 4 
-                    dari RentalPS. Konsol berkualitas, harga terjangkau, dan pelayanan terpercaya.
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Nikmati pengalaman gaming terbaik dengan menyewa PS4 
+                    dari RentalPS.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#availability" class="bg-ps-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-ps-dark-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                        <i class="fas fa-search mr-2"></i>Cek Ketersediaan
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#availability" class="bg-ps-blue text-white px-6 py-3 rounded-full text-base font-medium hover:bg-ps-blue-hover">
+                        Cek Ketersediaan
                     </a>
-                    <a href="#packages" class="border-2 border-ps-blue text-ps-blue px-8 py-4 rounded-full text-lg font-semibold hover:bg-ps-blue hover:text-white transition-all duration-300 transform hover:scale-105">
-                        <i class="fas fa-tags mr-2"></i>Lihat Paket
+                    <a href="#packages" class="border border-ps-blue text-ps-blue px-6 py-3 rounded-full text-base font-medium hover:bg-ps-blue-hover hover:text-white">
+                        Lihat Paket
                     </a>
                 </div>
             </div>
             
             <!-- Hero Stats -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 mt-16 lg:mt-20">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 mt-16 lg:mt-20 hidden">
                 <div class="text-center p-4 lg:p-6 bg-white/80 backdrop-blur-md rounded-xl border border-ps-blue/30 hover:bg-white/90 transition-all duration-300 shadow-lg">
                     <h3 class="text-3xl lg:text-4xl font-bold text-ps-blue mb-2 drop-shadow-lg">15</h3>
                     <p class="text-ps-text-light font-medium">PS5 Tersedia</p>
@@ -121,7 +124,8 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-ps-text-dark mb-4">Ketersediaan Konsol PlayStation</h2>
                 <p class="text-xl text-ps-text-light">Cek ketersediaan konsol PlayStation terbaru dengan tracking real-time</p>
-            </div>            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 game-grid">
+            </div>            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 game-grid">
                 <!-- PS5 Standard Console -->
                 <div class="console-card console-card-ps5 bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100">
                     <div class="relative">
@@ -538,16 +542,20 @@
                         <li class="flex items-center text-gray-300">
                             <i class="fas fa-check text-ps-accent mr-3"></i>
                             Exclusive Game Access
-                        </li>                        <li class="flex items-center text-gray-300">
+                        </li>                        
+                        <li class="flex items-center text-gray-300">
                             <i class="fas fa-check text-ps-accent mr-3"></i>
                             PlayStation Plus Premium
                         </li>
-                    </ul>                    <button class="w-full py-4 bg-gradient-to-r from-ps-blue to-ps-accent text-white font-bold rounded-full hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 shadow-xl">
+                    </ul>                    
+                    <button class="w-full py-4 bg-gradient-to-r from-ps-blue to-ps-accent text-white font-bold rounded-full hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 shadow-xl">
                         Pilih Paket
                     </button>
                 </div>
             </div>
-        </div>    </section><!-- Why Choose Us Section -->
+        </div>    
+    </section>
+    <!-- Why Choose Us Section -->
     <section class="py-20 bg-ps-light-gray">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -826,7 +834,8 @@
                 </div>
             </div>
         </div>
-    </section><!-- Modal for Login -->
+    </section>
+    <!-- Modal for Login -->
     <div id="loginModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white rounded-2xl p-8 w-full max-w-md shadow-2xl">
@@ -847,7 +856,8 @@
                 </p>
             </div>
         </div>
-    </div>    <!-- Modal for Register -->
+    </div>    
+    <!-- Modal for Register -->
     <div id="registerModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white rounded-2xl p-8 w-full max-w-md shadow-2xl">
@@ -863,20 +873,24 @@
                     <input type="tel" placeholder="No. Telepon" required 
                            class="w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none">
                     <input type="password" placeholder="Password" required 
-                           class="w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none">                    <input type="password" placeholder="Konfirmasi Password" required 
+                           class="w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none">                    
+                           <input type="password" placeholder="Konfirmasi Password" required 
                            class="w-full px-4 py-3 bg-ps-light-gray border border-ps-gray rounded-lg text-ps-text placeholder-ps-text-light focus:border-ps-blue focus:outline-none">
                     <button type="submit" class="w-full py-4 bg-gradient-to-r from-ps-blue to-ps-accent text-white font-bold rounded-full hover:from-ps-dark-blue hover:to-ps-blue transition-all duration-300 shadow-xl">
                         Daftar
                     </button>
-                </form>                <p class="text-center text-ps-text-light mt-6">
+                </form>                
+                <p class="text-center text-ps-text-light mt-6">
                     Sudah punya akun? <a href="#" id="showLogin" class="text-ps-blue hover:underline">Masuk di sini</a>
                 </p>
             </div>
         </div>
-    </div>    <!-- Booking Modal -->
+    </div>    
+    <!-- Booking Modal -->
     <div id="bookingModal" class="booking-modal hidden">
         <div class="booking-modal-container">
-            <div class="booking-modal-content">                <div class="flex justify-between items-center mb-6 modal-header-sticky md:static md:mb-6 md:pb-0 md:border-b-0 md:m-0 md:p-0">
+            <div class="booking-modal-content">                
+                <div class="flex justify-between items-center mb-6 modal-header-sticky md:static md:mb-6 md:pb-0 md:border-b-0 md:m-0 md:p-0">
                     <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-ps-text">Booking Konsol PlayStation</h2>
                     <button class="close-booking text-ps-text-light hover:text-ps-text text-2xl hover:bg-ps-light-gray rounded-full w-10 h-10 md:w-8 md:h-8 flex items-center justify-center transition-colors">&times;</button>
                 </div>
@@ -976,7 +990,8 @@
                 </div>
             </div>
         </div>
-    </div>    <script src="js/script.js"></script>
+    </div>    
+    <script src="js/script.js"></script>
     <script src="js/status-manager.js"></script>
     <script src="js/console-tracker.js"></script>
     <script src="js/booking-system.js"></script>
